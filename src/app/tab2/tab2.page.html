@@ -31,12 +31,15 @@
     <ion-item>
       <ion-input #valueemail label="Email input" type="email" placeholder="email@domain.com"></ion-input>
     </ion-item>
-  <ion-item>
-    <ion-textarea #valuetext labelPlacement="floating" value="Lorem Ipsum" (downkey)="message=this.value">
+<ion-item>
+  <ion-textarea
+    (ionInput)="updateMessage($event)"
+    labelPlacement="floating"
+    value="Lorem Ipsum">
+    <div slot="label">Comments <ion-text color="danger">(Required)</ion-text></div>
+  </ion-textarea>
+</ion-item>
 
-      <div slot="label">Comments <ion-text color="danger">(Required)</ion-text></div>
-    </ion-textarea>
-    </ion-item>
   <ion-item>
 <ion-button (click)="envoyermsg()" >envoyer</ion-button>
     </ion-item>

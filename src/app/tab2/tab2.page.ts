@@ -6,11 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
+  content:"";
   constructor(http: HttpClient) {
   this.content=""
 
   }
+updateMessage(event: any) {
+  this.message = event.target.value;
+}
+
 envoyermsg(){
     const headers = new HttpHeaders({
       'Accept': 'application/json',
